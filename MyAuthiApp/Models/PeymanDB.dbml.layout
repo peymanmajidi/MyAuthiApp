@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="PeymanDB">
+  <DataContextMoniker Name="/PeymanDataContext" />
+  <nestedChildShapes>
+    <classShape Id="44f01c5d-9946-4562-a653-2e621a8749bc" absoluteBounds="3.875, 0.75, 2, 1.7708968098958333">
+      <DataClassMoniker Name="/PeymanDataContext/Book" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9a60935a-2581-4102-8453-b58fdef1d00d" absoluteBounds="3.89, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e6facc55-d271-4a3e-8413-2c0cb1701c9b" absoluteBounds="3.75, 3.75, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/PeymanDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c838f544-47d9-4d66-aaf6-1df97ce6e2aa" absoluteBounds="3.765, 4.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f189f835-305f-4842-83e8-99b641a4741a" absoluteBounds="0.75, 1.25, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/PeymanDataContext/Category" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7c87c151-e5a9-4133-8956-fd2e6452188b" absoluteBounds="0.765, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9076765e-6f14-4a74-86f2-8f662592080c" absoluteBounds="0.75, 4, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PeymanDataContext/Publisher" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bb307b97-cb29-46f9-9ee4-15878593cc10" absoluteBounds="0.765, 4.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.84699625651042); (3.04166666666667 : 1.84699625651042 : JumpStart); (3.20833333333333 : 1.84699625651042 : JumpEnd); (3.875 : 1.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PeymanDataContext/Category/Category_Book" />
+      <nodes>
+        <classShapeMoniker Id="f189f835-305f-4842-83e8-99b641a4741a" />
+        <classShapeMoniker Id="44f01c5d-9946-4562-a653-2e621a8749bc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.00121330413662); (3.125 : 3.62621330413662); (3.125 : 1.26724612825521); (3.875 : 1.26724612825521)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PeymanDataContext/Publisher/Publisher_Book" />
+      <nodes>
+        <classShapeMoniker Id="9076765e-6f14-4a74-86f2-8f662592080c" />
+        <classShapeMoniker Id="44f01c5d-9946-4562-a653-2e621a8749bc" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
