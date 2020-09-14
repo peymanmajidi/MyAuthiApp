@@ -56,33 +56,26 @@ namespace MyAuthiApp.Controllers
             return Content($"{username} added!" + result.Errors.FirstOrDefault());
         }
 
-        [HttpGet]
-
-        public ActionResult Login(string username, string password)
+               public ActionResult Login(string UserName, string Password, string returnUrl)
         {
             var userStore = new UserStore<IdentityUser>();
             var userManager = new UserManager<IdentityUser>(userStore);
-            var user = userManager.Find(username, password);
+            var user = userManager.Find(UserName, Password);
 
             if (user != null)
             {
-                // should install
-                // Microsoft.AspNet.Identity.EntityFramework
-                // Microsoft.AspNet.Identity.Owin
-                // add Startup.cs
-                // then
-                // Microsoft.Owin.Host.SystemWeb
                 var authenticationManager = System.Web.HttpContext.Current.GetOwinContext().Authentication;
                 var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
-
                 authenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = false }, userIdentity);
-                return Content("Boom!");
+                Session["User"] = user;
+                
+
+               return RedirectToLocal(returnUrl);
+                return RedirectToAction("Index", "Home");
             }
-            else
-                return Content("Invalid username or password.");
 
-
-          
+                       ViewBag.error = "نام کاربری یا گذرواژه نامعتبر";
+            return View();
         }
 
         public ActionResult About()
