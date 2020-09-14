@@ -24,6 +24,16 @@ namespace MyAuthiApp.Controllers
             var pass = "abcABC@123";
             var userStore = new UserStore<IdentityUser>();
             var manager = new UserManager<IdentityUser>(userStore);
+            
+            manager.PasswordValidator = new PasswordValidator()
+            {
+                RequireDigit = false,
+                RequiredLength = 4,
+                RequireLowercase = false,
+                RequireNonLetterOrDigit = false,
+                RequireUppercase = false
+
+            };
 
             var user = new IdentityUser() { UserName = username };
             var result = manager.Create(user, pass);
