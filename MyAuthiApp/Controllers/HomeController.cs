@@ -17,6 +17,14 @@ namespace MyAuthiApp.Controllers
 
             return View();
         }
+        
+       public ActionResult Logout()
+        {
+
+            HttpContext.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            return RedirectToAction("Index", "Home");
+
+        }
 
         [HttpGet]
         public ActionResult Register(string username)
